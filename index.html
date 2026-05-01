@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Business Accelerator Program — Feedback</title>
+<meta property="og:title" content="Business Accelerator Program — Feedback">
+<meta property="og:description" content="Share your feedback and suggestions for the Business Accelerator Program by Seby Cyriac.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Business Accelerator Program — Feedback Form">
+<meta property="og:description" content="Share your feedback and suggestions for the Business Accelerator Program.">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink:       #111111;
+    --ink-mid:   #444444;
+    --ink-light: #888888;
+    --border:    #E2E2E2;
+    --bg:        #FAFAFA;
+    --white:     #FFFFFF;
+    --accent:    #1A1A1A;
+    --focus:     #2563EB;
+    --success:   #16A34A;
+    --error:     #DC2626;
+    --radius:    10px;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--bg);
+    color: var(--ink);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* ── HEADER ── */
+  .header {
+    background: var(--white);
+    border-bottom: 1px solid var(--border);
+    padding: 48px 24px 40px;
+    text-align: center;
+  }
+  .header-tag {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--ink-light);
+    margin-bottom: 16px;
+  }
+  .header h1 {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(28px, 6vw, 44px);
+    font-weight: 400;
+    color: var(--ink);
+    line-height: 1.15;
+    margin-bottom: 12px;
+  }
+  .header h1 em {
+    font-style: italic;
+    color: var(--ink-mid);
+  }
+  .header-line {
+    width: 32px;
+    height: 2px;
+    background: var(--ink);
+    margin: 16px auto 0;
+  }
+
+  /* ── CONTAINER ── */
+  .container {
+    max-width: 560px;
+    margin: 0 auto;
+    padding: 40px 20px 64px;
+    flex: 1;
+  }
+
+  .intro {
+    font-size: 14px;
+    color: var(--ink-mid);
+    line-height: 1.75;
+    margin-bottom: 32px;
+    text-align: center;
+  }
+
+  /* ── FORM SECTIONS ── */
+  .form-block {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 28px 24px;
+    margin-bottom: 16px;
+    animation: fadeUp 0.4s ease both;
+  }
+  .form-block:nth-child(2) { animation-delay: 0.05s; }
+  .form-block:nth-child(3) { animation-delay: 0.1s; }
+  .form-block:nth-child(4) { animation-delay: 0.15s; }
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(12px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  .block-label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+    padding-bottom: 14px;
+    border-bottom: 1px solid var(--border);
+  }
+  .block-num {
+    width: 24px; height: 24px;
+    background: var(--ink);
+    color: var(--white);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 11px; font-weight: 600;
+    flex-shrink: 0;
+  }
+  .block-title {
+    font-family: 'DM Serif Display', serif;
+    font-size: 17px;
+    color: var(--ink);
+  }
+  .block-sub {
+    font-size: 11px;
+    color: var(--ink-light);
+    margin-top: 1px;
+  }
+
+  /* FIELDS */
+  .field { margin-bottom: 16px; }
+  .field:last-child { margin-bottom: 0; }
+  .field label {
+    display: block;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.6px;
+    text-transform: uppercase;
+    color: var(--ink-mid);
+    margin-bottom: 7px;
+  }
+  .req { color: var(--error); }
+  .field input,
+  .field textarea,
+  .field select {
+    width: 100%;
+    padding: 12px 14px;
+    border: 1.5px solid var(--border);
+    border-radius: var(--radius);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 14px;
+    color: var(--ink);
+    background: var(--white);
+    transition: border-color 0.2s, box-shadow 0.2s;
+    outline: none;
+    appearance: none;
+  }
+  .field input:focus,
+  .field textarea:focus,
+  .field select:focus {
+    border-color: var(--focus);
+    box-shadow: 0 0 0 3px rgba(37,99,235,0.1);
+  }
+  .field textarea {
+    resize: vertical;
+    min-height: 110px;
+    line-height: 1.6;
+  }
+  .g2 { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+
+  /* RATING */
+  .rating-group {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+  .rating-opt input[type=radio] { display: none; }
+  .rating-opt label {
+    display: flex; align-items: center; justify-content: center;
+    width: 44px; height: 44px;
+    border: 1.5px solid var(--border);
+    border-radius: 8px;
+    font-size: 14px; font-weight: 500;
+    color: var(--ink-mid);
+    cursor: pointer;
+    transition: all 0.15s;
+  }
+  .rating-opt input:checked + label {
+    background: var(--ink);
+    border-color: var(--ink);
+    color: var(--white);
+    font-weight: 600;
+  }
+  .rating-opt label:hover {
+    border-color: var(--ink);
+    color: var(--ink);
+  }
+  .rating-labels {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 6px;
+    font-size: 11px;
+    color: var(--ink-light);
+  }
+
+  /* CHECKBOX OPTIONS */
+  .check-group { display: flex; flex-direction: column; gap: 10px; }
+  .check-opt { display: flex; align-items: center; gap: 10px; cursor: pointer; }
+  .check-opt input[type=checkbox] { display: none; }
+  .check-box {
+    width: 18px; height: 18px; flex-shrink: 0;
+    border: 1.5px solid var(--border);
+    border-radius: 4px;
+    display: flex; align-items: center; justify-content: center;
+    transition: all 0.15s;
+  }
+  .check-opt input:checked ~ .check-box {
+    background: var(--ink); border-color: var(--ink);
+  }
+  .check-opt input:checked ~ .check-box::after {
+    content: '✓'; color: white; font-size: 11px; font-weight: 700;
+  }
+  .check-label { font-size: 13px; color: var(--ink-mid); }
+
+  /* SUBMIT */
+  .submit-wrap { margin-top: 8px; }
+  .submit-btn {
+    width: 100%;
+    padding: 15px;
+    background: var(--ink);
+    color: var(--white);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    border: none;
+    border-radius: var(--radius);
+    cursor: pointer;
+    transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+    display: flex; align-items: center; justify-content: center; gap: 10px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.12);
+  }
+  .submit-btn:hover {
+    background: #333;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.18);
+  }
+  .submit-btn:active { transform: translateY(0); }
+  .submit-btn:disabled { opacity: 0.5; cursor: not-allowed; transform: none; }
+  .spinner {
+    display: none; width: 15px; height: 15px;
+    border: 2px solid rgba(255,255,255,0.3);
+    border-top-color: white; border-radius: 50%;
+    animation: spin 0.7s linear infinite;
+  }
+  @keyframes spin { to { transform: rotate(360deg); } }
+  .submit-btn.loading .spinner { display: block; }
+  .submit-btn.loading .btn-text { opacity: 0.7; }
+
+  .note {
+    text-align: center;
+    font-size: 11px;
+    color: var(--ink-light);
+    margin-top: 14px;
+    line-height: 1.6;
+  }
+
+  /* SUCCESS */
+  .success-screen {
+    display: none;
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    text-align: center;
+    padding: 56px 28px;
+    animation: fadeUp 0.4s ease;
+  }
+  .success-screen.show { display: block; }
+  .success-icon {
+    width: 64px; height: 64px;
+    background: var(--ink);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 26px; margin: 0 auto 22px;
+  }
+  .success-screen h2 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 26px; font-weight: 400;
+    color: var(--ink); margin-bottom: 10px;
+  }
+  .success-screen p {
+    font-size: 14px; color: var(--ink-light); line-height: 1.7;
+  }
+  .new-btn {
+    margin-top: 24px;
+    padding: 11px 28px;
+    background: var(--ink); color: var(--white);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 12px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase;
+    border: none; border-radius: 8px; cursor: pointer;
+    transition: background 0.2s;
+  }
+  .new-btn:hover { background: #333; }
+
+  /* TOAST */
+  .toast {
+    display: none;
+    position: fixed; bottom: 24px; left: 50%; transform: translateX(-50%);
+    background: #1F2937; color: white;
+    padding: 12px 20px; border-radius: 8px;
+    font-size: 13px; font-weight: 500;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+    z-index: 999; white-space: nowrap;
+  }
+
+  /* FOOTER */
+  .footer {
+    text-align: center;
+    padding: 20px;
+    font-size: 11px;
+    color: var(--ink-light);
+    border-top: 1px solid var(--border);
+    background: var(--white);
+  }
+
+  @media (max-width: 480px) {
+    .g2 { grid-template-columns: 1fr; }
+    .form-block { padding: 22px 18px; }
+    .header { padding: 36px 20px 30px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<div class="header">
+  <div class="header-tag">Business Accelerator Program</div>
+  <h1>Business Accelerator<br><em>Feedback Form</em></h1>
+  <div class="header-line"></div>
+</div>
+
+<!-- FORM -->
+<div class="container">
+
+  <p class="intro">
+    We value your thoughts. Please take a moment to share your experience
+    and help us improve the Business Accelerator Program.
+  </p>
+
+  <form id="feedbackForm" novalidate>
+
+    <!-- 1. CONTACT DETAILS -->
+    <div class="form-block">
+      <div class="block-label">
+        <div class="block-num">1</div>
+        <div>
+          <div class="block-title">Contact Details</div>
+          <div class="block-sub">Tell us who you are</div>
+        </div>
+      </div>
+      <div class="field">
+        <label>Full Name <span class="req">*</span></label>
+        <input type="text" id="name" placeholder="Your full name" required>
+      </div>
+      <div class="g2">
+        <div class="field">
+          <label>Email Address <span class="req">*</span></label>
+          <input type="email" id="email" placeholder="you@company.com" required>
+        </div>
+        <div class="field">
+          <label>Mobile Number <span class="req">*</span></label>
+          <input type="tel" id="mobile" placeholder="+971 XX XXX XXXX" required>
+        </div>
+      </div>
+      <div class="field">
+        <label>Company / Organisation</label>
+        <input type="text" id="company" placeholder="Where do you work?">
+      </div>
+    </div>
+
+    <!-- 2. OVERALL RATING -->
+    <div class="form-block">
+      <div class="block-label">
+        <div class="block-num">2</div>
+        <div>
+          <div class="block-title">Overall Experience</div>
+          <div class="block-sub">How would you rate the program overall?</div>
+        </div>
+      </div>
+      <div class="field">
+        <label>Rating <span class="req">*</span></label>
+        <div class="rating-group" id="ratingGroup">
+          <div class="rating-opt"><input type="radio" name="rating" id="r1" value="1"><label for="r1">1</label></div>
+          <div class="rating-opt"><input type="radio" name="rating" id="r2" value="2"><label for="r2">2</label></div>
+          <div class="rating-opt"><input type="radio" name="rating" id="r3" value="3"><label for="r3">3</label></div>
+          <div class="rating-opt"><input type="radio" name="rating" id="r4" value="4"><label for="r4">4</label></div>
+          <div class="rating-opt"><input type="radio" name="rating" id="r5" value="5"><label for="r5">5</label></div>
+          <div class="rating-opt"><input type="radio" name="rating" id="r6" value="6"><label for="r6">6</label></div>
+          <div class="rating-opt"><input type="radio" name="rating" id="r7" value="7"><label for="r7">7</label></div>
+          <div class="rating-opt"><input type="radio" name="rating" id="r8" value="8"><label for="r8">8</label></div>
+          <div class="rating-opt"><input type="radio" name="rating" id="r9" value="9"><label for="r9">9</label></div>
+          <div class="rating-opt"><input type="radio" name="rating" id="r10" value="10"><label for="r10">10</label></div>
+        </div>
+        <div class="rating-labels"><span>Not satisfied</span><span>Extremely satisfied</span></div>
+      </div>
+    </div>
+
+    <!-- 3. FEEDBACK -->
+    <div class="form-block">
+      <div class="block-label">
+        <div class="block-num">3</div>
+        <div>
+          <div class="block-title">Your Feedback</div>
+          <div class="block-sub">Share what worked well and what could improve</div>
+        </div>
+      </div>
+      <div class="field">
+        <label>What did you find most valuable? <span class="req">*</span></label>
+        <textarea id="valuable" placeholder="Share what worked well for you..."></textarea>
+      </div>
+      <div class="field">
+        <label>What could be improved?</label>
+        <textarea id="improve" placeholder="Any areas you feel could be better..."></textarea>
+      </div>
+    </div>
+
+    <!-- 4. SUGGESTIONS -->
+    <div class="form-block">
+      <div class="block-label">
+        <div class="block-num">4</div>
+        <div>
+          <div class="block-title">Suggestions</div>
+          <div class="block-sub">Help us shape future programs</div>
+        </div>
+      </div>
+      <div class="field">
+        <label>Topics you'd like covered in future sessions</label>
+        <textarea id="topics" placeholder="e.g. Digital transformation, Sales strategies, Leadership..."></textarea>
+      </div>
+
+      <div class="field">
+        <label>Any other comments or suggestions</label>
+        <textarea id="other" placeholder="Anything else you'd like to share..."></textarea>
+      </div>
+    </div>
+
+    <!-- SUBMIT -->
+    <div class="submit-wrap">
+      <button type="submit" class="submit-btn" id="submitBtn">
+        <div class="spinner"></div>
+        <span class="btn-text">Submit Feedback</span>
+      </button>
+      <p class="note">Your responses are confidential and will be used solely to improve the program.</p>
+    </div>
+
+  </form>
+
+  <!-- SUCCESS -->
+  <div class="success-screen" id="successScreen">
+    <div class="success-icon">✓</div>
+    <h2>Thank You!</h2>
+    <p>Your feedback has been received.<br>We truly appreciate you taking the time to share your thoughts.</p>
+    <button class="new-btn" onclick="resetForm()">Submit Another Response</button>
+  </div>
+
+</div>
+
+<!-- FOOTER -->
+<div class="footer">
+  Business Accelerator Program &nbsp;·&nbsp; Seby Cyriac &nbsp;·&nbsp; 2026
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script>
+const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxaV_8SpCEN0TUi_c618iIKlUSxBVYhAZsvpL5RzCdjEDza0SrpctTXbZyAC-rS9LL7pg/exec';
+
+function val(id) { const el = document.getElementById(id); return el ? el.value.trim() : ''; }
+function radioVal(name) { const el = document.querySelector(`input[name="${name}"]:checked`); return el ? el.value : ''; }
+
+function showToast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg; t.style.display = 'block';
+  setTimeout(() => t.style.display = 'none', 4000);
+}
+
+document.getElementById('feedbackForm').addEventListener('submit', function(e) {
+  e.preventDefault();
+
+  if (!val('name'))     { showToast('⚠️ Please enter your name.'); return; }
+  if (!val('email'))    { showToast('⚠️ Please enter your email.'); return; }
+  if (!val('mobile'))   { showToast('⚠️ Please enter your mobile number.'); return; }
+  if (!radioVal('rating')) { showToast('⚠️ Please give an overall rating.'); return; }
+  if (!val('valuable')) { showToast('⚠️ Please share what you found valuable.'); return; }
+
+
+
+  const btn = document.getElementById('submitBtn');
+  btn.classList.add('loading'); btn.disabled = true;
+
+  const data = {
+    timestamp:  new Date().toLocaleString('en-AE', {timeZone:'Asia/Dubai'}),
+    name:       val('name'),
+    email:      val('email'),
+    mobile:     val('mobile'),
+    company:    val('company'),
+    rating:     radioVal('rating'),
+    valuable:   val('valuable'),
+    improve:    val('improve'),
+    topics:     val('topics'),
+    other:      val('other'),
+  };
+
+  const iframe = document.createElement('iframe');
+  iframe.name = 'bap_iframe'; iframe.style.display = 'none';
+  document.body.appendChild(iframe);
+
+  const form = document.createElement('form');
+  form.method = 'POST'; form.action = SCRIPT_URL; form.target = 'bap_iframe';
+  const input = document.createElement('input');
+  input.type = 'hidden'; input.name = 'data'; input.value = JSON.stringify(data);
+  form.appendChild(input); document.body.appendChild(form);
+
+  iframe.onload = function() {
+    btn.classList.remove('loading'); btn.disabled = false;
+    document.getElementById('feedbackForm').style.display = 'none';
+    document.getElementById('successScreen').classList.add('show');
+    window.scrollTo({top: 0, behavior: 'smooth'});
+    setTimeout(() => { document.body.removeChild(form); document.body.removeChild(iframe); }, 1000);
+  };
+
+  setTimeout(() => {
+    if (btn.disabled) {
+      btn.classList.remove('loading'); btn.disabled = false;
+      document.getElementById('feedbackForm').style.display = 'none';
+      document.getElementById('successScreen').classList.add('show');
+      window.scrollTo({top: 0, behavior: 'smooth'});
+    }
+  }, 8000);
+
+  form.submit();
+});
+
+function resetForm() {
+  document.getElementById('feedbackForm').reset();
+  document.getElementById('feedbackForm').style.display = 'block';
+  document.getElementById('successScreen').classList.remove('show');
+  window.scrollTo({top: 0, behavior: 'smooth'});
+}
+</script>
+</body>
+</html>
